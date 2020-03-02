@@ -50,3 +50,14 @@ exports.getAllProducts = (callBack) => {
                callBack([]);
            });
 }
+
+exports.deleteAllProducts = (req, res, next) => {
+    Product.deleteMany()
+           .then(callback => {
+               console.log('Records deleted');
+           })
+           .catch(error => {
+               console.log(error);
+
+           })
+};
